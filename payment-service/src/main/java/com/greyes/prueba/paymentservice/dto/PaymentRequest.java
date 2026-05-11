@@ -1,0 +1,21 @@
+package com.greyes.prueba.paymentservice.dto;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import lombok.Data;
+
+@Data
+public class PaymentRequest {
+
+    @NotNull
+    private Long orderId;
+
+    @NotBlank
+    private String cardNumber;
+
+    @NotBlank
+    private String cardHolder;
+
+    @NotBlank
+    private String cvv;
+}

@@ -1,0 +1,369 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: prueba_banco
+meta:
+  id: wrk_dc94543177f44a0494d290fd7a6605b7
+  created: 1778522497126
+  modified: 1778535511588
+  description: ""
+collection:
+  - url: http://localhost:8082/api/orders/2
+    name: My first request
+    meta:
+      id: req_d69bd091b432473ab2f76becbb3eb2e9
+      created: 1778522497151
+      modified: 1778534936622
+      isPrivate: false
+      description: ""
+      sortKey: -1778522497151
+    method: GET
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "customerId": 5,
+          "items": [
+            {
+              "productId": 1,
+              "quantity": 5
+            },
+            {
+              "productId": 3,
+              "quantity": 3
+            },
+            {
+              "productId": 5,
+              "quantity": 2
+            }
+          ]
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.3.0
+        description: ""
+        disabled: false
+      - name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc3ODUyMjU2OCwiZXhwIjoxNzc4NjA4OTY4fQ.tJVrNnY82wBLSctnALSAxKQO7OuhLHJsSwia3nhy2KU
+        description: ""
+        disabled: true
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc3ODUzNDU0NSwiZXhwIjoxNzc4NjIwOTQ1fQ.vx77BdQYfnY5f2Blj55xK4bBrHeoZQOqcWZo4pZDk5iZAvcXo-zqtgRR_WUR5X3Z
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8081/api/products
+    name: Get All Products
+    meta:
+      id: req_a5110be28f4540d4bf0e22ee3e0afa72
+      created: 1778538000001
+      modified: 1778538000001
+      isPrivate: false
+      description: Get all products from FakeStore API
+      sortKey: -1
+    method: GET
+    headers:
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8081/api/products/2
+    name: Get Product By Id
+    meta:
+      id: req_4f5a533ced4247279f918b35b59652c8
+      created: 1778538000002
+      modified: 1778536209496
+      isPrivate: false
+      description: Get single product by id
+      sortKey: -2
+    method: GET
+    headers:
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8082/api/auth/login
+    name: Order Service Login
+    meta:
+      id: req_452cd59a7fce49acbdaea9fc9cdee4e0
+      created: 1778538000003
+      modified: 1778538000003
+      isPrivate: false
+      description: Generate JWT token for order service
+      sortKey: -3
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "username": "admin",
+          "password": "admin123"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8082/api/orders
+    name: Create Order
+    meta:
+      id: req_a71a5262428b466daa27d2f8a4af1b3a
+      created: 1778538000004
+      modified: 1778536222705
+      isPrivate: false
+      description: Create new order
+      sortKey: -4
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "customerId": 7,
+          "items": [
+            {
+              "productId": 1,
+              "quantity": 2
+            },
+            {
+              "productId": 2,
+              "quantity": 1
+            }
+          ]
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc3ODUzNTg4NSwiZXhwIjoxNzc4NjIyMjg1fQ.LVv-N1A28od9jvJW91xuOYTWACjB7RQ3fm46ozrLz9azkxbNDoPehw7dMyoKZvlh
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc3ODUzNTg4NSwiZXhwIjoxNzc4NjIyMjg1fQ.LVv-N1A28od9jvJW91xuOYTWACjB7RQ3fm46ozrLz9azkxbNDoPehw7dMyoKZvlh
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8082/api/orders
+    name: Get All Orders
+    meta:
+      id: req_d85641edfb394641bc4543073e3dda41
+      created: 1778538000005
+      modified: 1778538000005
+      isPrivate: false
+      description: Get all orders
+      sortKey: -5
+    method: GET
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc3ODUzNTg4NSwiZXhwIjoxNzc4NjIyMjg1fQ.LVv-N1A28od9jvJW91xuOYTWACjB7RQ3fm46ozrLz9azkxbNDoPehw7dMyoKZvlh
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc3ODUzNTg4NSwiZXhwIjoxNzc4NjIyMjg1fQ.LVv-N1A28od9jvJW91xuOYTWACjB7RQ3fm46ozrLz9azkxbNDoPehw7dMyoKZvlh
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8082/api/orders/4
+    name: Get Order By Id
+    meta:
+      id: req_64c54afee92a4fe68c52693af98f2d76
+      created: 1778538000006
+      modified: 1778536237578
+      isPrivate: false
+      description: Get order by id
+      sortKey: -6
+    method: GET
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc3ODUzNTg4NSwiZXhwIjoxNzc4NjIyMjg1fQ.LVv-N1A28od9jvJW91xuOYTWACjB7RQ3fm46ozrLz9azkxbNDoPehw7dMyoKZvlh
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc3ODUzNTg4NSwiZXhwIjoxNzc4NjIyMjg1fQ.LVv-N1A28od9jvJW91xuOYTWACjB7RQ3fm46ozrLz9azkxbNDoPehw7dMyoKZvlh
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8082/api/orders/5/cancel
+    name: Cancel Order
+    meta:
+      id: req_477576e3f4a244dfb09e5c6c1e4099cb
+      created: 1778538000007
+      modified: 1778536244413
+      isPrivate: false
+      description: Cancel order
+      sortKey: -7
+    method: PUT
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc3ODUzNTg4NSwiZXhwIjoxNzc4NjIyMjg1fQ.LVv-N1A28od9jvJW91xuOYTWACjB7RQ3fm46ozrLz9azkxbNDoPehw7dMyoKZvlh
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc3ODUzNTg4NSwiZXhwIjoxNzc4NjIyMjg1fQ.LVv-N1A28od9jvJW91xuOYTWACjB7RQ3fm46ozrLz9azkxbNDoPehw7dMyoKZvlh
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8082/api/orders/4/pay
+    name: Mark Order Paid
+    meta:
+      id: req_36609c26b8974e78bce0592419c5c73e
+      created: 1778538000008
+      modified: 1778536258776
+      isPrivate: false
+      description: Mark order as paid
+      sortKey: -8
+    method: PUT
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc3ODUzNTg4NSwiZXhwIjoxNzc4NjIyMjg1fQ.LVv-N1A28od9jvJW91xuOYTWACjB7RQ3fm46ozrLz9azkxbNDoPehw7dMyoKZvlh
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc3ODUzNTg4NSwiZXhwIjoxNzc4NjIyMjg1fQ.LVv-N1A28od9jvJW91xuOYTWACjB7RQ3fm46ozrLz9azkxbNDoPehw7dMyoKZvlh
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8083/api/auth/login
+    name: Payment Service Login
+    meta:
+      id: req_34c80c71a0ba4ff98c47ce817f059ea1
+      created: 1778538000009
+      modified: 1778538000009
+      isPrivate: false
+      description: Generate JWT token for payment service
+      sortKey: -9
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "username": "admin",
+          "password": "admin123"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8083/api/payments
+    name: Process Payment
+    meta:
+      id: req_6878f056305946c6a951e5002806c92b
+      created: 1778538000010
+      modified: 1778536287009
+      isPrivate: false
+      description: Process payment and update order status
+      sortKey: -10
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "orderId": 6,
+          "cardNumber": "4111111111111111",
+          "cardHolder": "Gerardo Reyes",
+          "cvv": "123"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc3ODUzNTg4NSwiZXhwIjoxNzc4NjIyMjg1fQ.LVv-N1A28od9jvJW91xuOYTWACjB7RQ3fm46ozrLz9azkxbNDoPehw7dMyoKZvlh
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc3ODUzNTg4NSwiZXhwIjoxNzc4NjIyMjg1fQ.LVv-N1A28od9jvJW91xuOYTWACjB7RQ3fm46ozrLz9azkxbNDoPehw7dMyoKZvlh
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_878b9e553ee89da475226bcece752db59e4c0b08
+    created: 1778522497128
+    modified: 1778523510085
+  cookies:
+    - id: d902a59d-bccc-48b4-b40c-a8e3406075aa
+      key: JSESSIONID
+      value: CCC26AE1E29E6E8F4C2CF5ABDAE6332F
+      domain: localhost
+      path: /
+      secure: false
+      httpOnly: true
+      hostOnly: true
+environments:
+  name: Base Environment
+  meta:
+    id: env_878b9e553ee89da475226bcece752db59e4c0b08
+    created: 1778522497127
+    modified: 1778522497127
+    isPrivate: false
